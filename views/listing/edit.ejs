@@ -1,0 +1,99 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="container mt-5">
+    <h3>Edit your Listing</h3>
+    <form method="POST" action="/listings/<%= listt.id %>?_method=PUT" novalidate enctype="multipart/form-data">
+      <!-- Title -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="listing[title]"
+          value="<%= listt.title %>"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please provide a title.</div>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          id="description"
+          name="listing[description]"
+          rows="3"
+          required
+        ><%= listt.description %></textarea>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please provide a description.</div>
+      </div>
+
+      <!-- Image -->
+      <div class="mb-3">
+        <label for="image" class="form-label">Image URL</label>
+        <input
+         name="listing[image]"
+         value="<%= listt.image %>"
+         type="file" 
+         class="form-control"
+         />
+       
+      
+      </div>
+
+      <!-- Price -->
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input
+        
+          class="form-control"
+          id="price"
+          name="listing[price]"
+          value="<%= listt.price %>"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please provide a valid price.</div>
+      </div>
+
+      <!-- Country -->
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input
+          type="text"
+          class="form-control"
+          id="country"
+          name="listing[country]"
+          value="<%= listt.country %>"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please provide a country.</div>
+      </div>
+
+      <!-- Location -->
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          name="listing[location]"
+          value="<%= listt.location %>"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please provide a location.</div>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="submit btn btn-primary">Edit</button>
+    </form>
+  </div>
+
+  
+</body>

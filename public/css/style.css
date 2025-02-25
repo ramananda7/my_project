@@ -1,0 +1,66 @@
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container{
+  flex:1;
+}
+.fa-compass{
+    color: blueviolet;
+}
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .f-info-links,
+  .f-info-socials {
+    width: 100%;
+  }
+  
+  .f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  
+  .f-info-links a {
+    margin: 0 1rem;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .f-info-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .f-info-brand {
+    margin: 0.5rem 0;
+  }
+  .card{
+    border: none;
+    margin-bottom: 2rem;
+  }
+  .card-img-top{
+    border-radius:1rem;
+    width: 100%;
+  }
+  .card-body{
+    padding: 0 !important;
+  }
+  .listing-link{
+    text-decoration: none;
+  }
+  .card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+  }
+  .show-img{
+    height: 30vh;
+  }
