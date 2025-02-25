@@ -77,9 +77,9 @@ const userRouter = require("./routes/user.js");
 // });
 
 // Home Route
-app.get("/", (req, res) => {
-  res.send("Hi, I am root");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hi, I am root");
+// });
 app.use((req,res,next) =>{
    res.locals.success = req.flash("success");
    res.locals.errr = req.flash("error");

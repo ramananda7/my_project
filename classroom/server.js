@@ -35,7 +35,7 @@ app.get("/register" , (req,res )=>{
    req.session.name=name;
    req.flash("success" , "user registered success .");
    res.redirect("/hello")
-});
+}); 
 app.get("/hello" , (req,res )=>{
   
     res.render("page.ejs",{name : req.session.name , msg:req.flash("success") });
