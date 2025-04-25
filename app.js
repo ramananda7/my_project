@@ -37,10 +37,10 @@ async function main() {
     mongoose.connect(dbUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        serverSelectionTimeoutMS: 30000,  // Set this higher (e.g., 30 seconds)
-        socketTimeoutMS: 45000,           // Increase socket timeout as well (e.g., 45 seconds)
+        serverSelectionTimeoutMS: 30000,  // wait 30s before failing
       });
-          console.log("Connected to MongoDB Successfully!");
+      
+     console.log("Connected to MongoDB Successfully!");
   } catch (err) {
     console.error("Database Connection Error:", err.message);
     process.exit(1); // Exit process on failure
