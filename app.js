@@ -31,29 +31,23 @@ const { Server } = require("http");
 const dbUrl = process.env.ATLASDB_URL;
 
 async function main() {
-    try {
-      console.log("Connecting to MongoDB...");
-  
-      await mongoose.connect(dbUrl, {
+  try {
+    console.log("Connecting to MongoDB...");
+
+    mongoose.connect(dbUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        serverSelectionTimeoutMS: 30000,
+        serverSelectionTimeoutMS: 30000,  // wait 30s before failing
       });
-  
-      console.log("Connected to MongoDB Successfully!");
-  
-      app.listen(8080, () => {
-        console.log("Server is listening on port 8080");
-      });
-  
-    } catch (err) {
-      console.error("Database Connection Error:", err.message);
-      process.exit(1);
-    }
+      
+     console.log("Connected to MongoDB Successfully!");
+  } catch (err) {
+    console.error("Database Connection Error:", err.message);
+    process.exit(1); // Exit process on failure
   }
-  
-  main();
-  
+}
+main();
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views")) 
