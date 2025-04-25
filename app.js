@@ -28,13 +28,13 @@ const { Server } = require("http");
 
 
 //MOGODB ATLUS Server
-const dbUrl = process.env.ATLAS_URL;
+const dbUrl = process.env.ATLASDB_URL;
 
 async function main() {
   try {
     console.log("Connecting to MongoDB...");
 
-    await mongoose.connect(process.env.ATLASDB_URL);
+    await mongoose.connect(process.env.dbUrl);
 
     console.log("Connected to MongoDB Successfully!");
   } catch (err) {
@@ -54,7 +54,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 const store = MongoStore.create({
     mongoUrl: dbUrl, 
     crypto : {
-        secret: process.env.SECRET,
+        secret: "vsubububsnkd",
     },
     touchAfter: 24 * 3600, 
 });
@@ -65,7 +65,7 @@ store.on("error", () => {
 
 const sessionOptions = {
     store,
-    secret: process.env.SECRET,
+    secret: "vsubububsnkd",
     resave: false, 
     saveUninitialized: true,
 };
