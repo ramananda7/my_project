@@ -30,16 +30,17 @@ const { Server } = require("http");
 //MOGODB ATLUS Server
 const dbUrl = process.env.ATLAS_URL;
 
-main()
-.then(() => {
-    console.log("connected to DB")
-})
-.catch(() => {
-    console.log(err);
-});
+async function main() {
+  try {
+    console.log("Connecting to MongoDB...");
 
-async function main() {  
     await mongoose.connect(process.env.ATLASDB_URL);
+
+    console.log("Connected to MongoDB Successfully!");
+  } catch (err) {
+    console.error("Database Connection Error:", err.message);
+    process.exit(1); // Exit process on failure
+  }
 }
 
 
